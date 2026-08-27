@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-export default function HoverCircle() {
+export default function InteractiveBackground() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -31,7 +31,7 @@ export default function HoverCircle() {
 
     if (visible) {
       window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      // window.addEventListener("scroll", handleScroll, { passive: true });
 
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
@@ -42,7 +42,7 @@ export default function HoverCircle() {
 
   return (
     <div
-      className="absolute top-0 left-0 w-screen h-[200vh] bg-base-100"
+      className="absolute top-0 left-0 inset-0 bg-base-100"
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onMouseDown={() => setClicked(true)}

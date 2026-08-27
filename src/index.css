@@ -1,18 +1,21 @@
 @import "tailwindcss";
-
 @plugin "daisyui" {
-  themes: all;
+  themes: light, luxury;
 }
 
 @layer utilities {
   .border-fade-down {
-    mask-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.7) 40%,
-        rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.7) 40%,
-        rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }

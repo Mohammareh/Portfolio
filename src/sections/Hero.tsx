@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import InteractiveBackground from "../components/InteractiveBackground";
 import { ArrowDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -8,26 +8,50 @@ const Hero = () => {
   const borderRadius = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
 
+  const [isDark, setIsDark] = useState(() => {
+    const theme = localStorage.getItem("theme");
+
+    return theme
+      ? theme === "luxury"
+      : document.documentElement.getAttribute("data-theme") === "luxury";
+  });
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const theme = localStorage.getItem("theme");
+      setIsDark(
+        theme
+          ? theme === "luxury"
+          : document.documentElement.getAttribute("data-theme") === "luxury",
+      );
+    };
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    window.addEventListener("storage", updateTheme);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("storage", updateTheme);
+    };
+  }, []);
+
   return (
     <div className="h-screen">
-      <InteractiveBackground />
+      <motion.img
+        className="absolute pointer-events-none top-0 left-0 object-cover w-screen h-screen select-none"
+        src={
+          isDark
+            ? "./src/assets/background-dark.jpg"
+            : "./src/assets/background.jpg"
+        }
+        alt="Background Image"
+        style={{ scale, borderRadius, opacity }}
+      />
 
-      {localStorage.getItem("theme") ||
-      document.documentElement.getAttribute("data-theme") === "luxury" ? (
-        <motion.img
-          className="absolute pointer-events-none top-0 left-0 object-cover w-screen h-screen select-none"
-          src="./src/assets/background-dark.jpg"
-          alt="Background Image"
-          style={{ scale, borderRadius, opacity }}
-        />
-      ) : (
-        <motion.img
-          className="absolute pointer-events-none top-0 left-0 object-cover w-screen h-screen select-none"
-          src="./src/assets/background.jpg"
-          alt="Background Image"
-          style={{ scale, borderRadius, opacity }}
-        />
-      )}
       <div className="h-[15vh]" />
 
       <motion.div

@@ -1,29 +1,33 @@
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import Lenis from "lenis";
 import Work from "./sections/Work";
+import Contact from "./sections/Contact";
+import { Footer } from "./sections/Footer";
+import InteractiveBackground from "./components/InteractiveBackground";
+import AboutMe from "./sections/AboutMe";
+import OhReallyHuh from "./sections/OhReallyHuh";
+import MyProjects from "./components/MyProjects";
+import LocomotiveScroll from "locomotive-scroll";
 
 const App = () => {
-  // Initialize Lenis
   useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis();
-
-    function raf(time: any) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  });
+    const scroll = new LocomotiveScroll();
+  }, []);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="min-h-screen relative">
       <Navbar />
-      <main className="h-[200vh] px-[19%]">
+      <InteractiveBackground />
+
+      <main className="flex flex-col z-10 items-center">
         <Hero />
         <Work />
+        <AboutMe />
+        <OhReallyHuh />
+        <MyProjects />
+        <Contact />
+        <Footer />
       </main>
     </div>
   );

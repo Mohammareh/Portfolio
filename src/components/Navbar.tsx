@@ -4,21 +4,52 @@ import { Moon, Sun } from "lucide-react";
 import { themeChange } from "theme-change";
 
 const Navbar = () => {
-  const [tab, setTab] = useState("about-me");
-  const [theme, setTheme] = useState("luxury");
+  const [tab, setTab] = useState("");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "luxury");
 
   useEffect(() => {
     themeChange(false);
   }, []);
 
-  const handleSwap = () => {
-    if (theme === "light") {
-      setTheme("luxury");
-    } else {
-      setTheme("light");
-    }
+  useEffect(() => {
+    themeChange(false);
+  }, []);
 
-    console.log(theme);
+  // Add scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about-me", "contact"];
+
+      // Check which section is currently in view
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if section is in viewport (adjust threshold as needed)
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            setTab(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleSwap = () => {
+    const newTheme = theme === "light" ? "luxury" : "light";
+    setTheme(newTheme);
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
@@ -32,24 +63,30 @@ const Navbar = () => {
         <div className="max-w-sm mx-auto bg-white/20 backdrop-blur-lg border border-white/20 w-50 h-12 space-x-3 rounded-4xl justify-center items-center flex z-10">
           <motion.div
             className="absolute glass -z-10 w-27 h-12 rounded-4xl"
+            initial={{
+              opacity: 0,
+            }}
             animate={{
-              x: tab === "about-me" ? -41 : 61,
-              scaleX: tab === "about-me" ? 1 : 0.85,
+              x: tab === "about-me" ? -41 : tab === "contact" ? 61 : 0,
+              scaleX: tab === "about-me" ? 1 : tab === "contact" ? 0.85 : 0,
               backgroundColor: "var(--color-primary)",
+              opacity: tab === "about-me" || tab === "contact" ? 1 : 0,
             }}
           />
-          <button
+          <a
+            href="#about-me"
             onClick={() => setTab("about-me")}
             className={`btn rounded-4xl ${tab === "about-me" ? "" : "btn-ghost"}`}
           >
             About me
-          </button>
-          <button
+          </a>
+          <a
+            href="#contact"
             onClick={() => setTab("contact")}
-            className={`btn rounded-4xl ${tab === "about-me" ? "btn-ghost" : ""}`}
+            className={`btn rounded-4xl ${tab === "contact" ? "" : "btn-ghost"}`}
           >
             Contact
-          </button>
+          </a>
         </div>
       </div>
       <div className="navbar-end top-5 pointer-events-auto ml-5 justify-center text-left items-start z-10">
