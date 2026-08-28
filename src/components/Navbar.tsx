@@ -1,19 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { themeChange } from "theme-change";
 
 const Navbar = () => {
   const [tab, setTab] = useState("");
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "luxury");
-
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-
-  useEffect(() => {
-    themeChange(false);
-  }, []);
 
   // Add scroll detection
   useEffect(() => {
@@ -42,15 +32,6 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleSwap = () => {
-    const newTheme = theme === "light" ? "luxury" : "light";
-    setTheme(newTheme);
-
-    document.documentElement.setAttribute("data-theme", newTheme);
-
-    localStorage.setItem("theme", newTheme);
-  };
 
   return (
     <div className="fixed top-0 left-0 h-[15vh] pointer-events-none navbar w-screen z-50">
@@ -90,17 +71,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end top-5 pointer-events-auto ml-5 justify-center text-left items-start z-10">
-        <button
-          className="btn btn-circle"
-          data-set-theme={theme}
-          onClick={handleSwap}
-        >
-          {theme === "light" ? (
-            <Sun className="pointer-events-none" />
-          ) : (
-            <Moon className="pointer-events-none" />
-          )}
-        </button>
+        <button className="btn btn-circle">HIII</button>
       </div>
     </div>
   );

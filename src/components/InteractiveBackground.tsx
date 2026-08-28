@@ -50,7 +50,7 @@ export default function InteractiveBackground() {
     >
       {visible && (
         <motion.div
-          className={`absolute z-10 rounded-full text-primary border-2 w-6 h-6 pointer-events-none`}
+          className="absolute z-10 rounded-full text-primary border-2 w-6 h-6 pointer-events-none"
           style={{
             left: pos.x,
             top: pos.y,
