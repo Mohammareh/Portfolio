@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
   const [tab, setTab] = useState("");
@@ -34,7 +33,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 h-[15vh] pointer-events-none navbar w-screen z-50">
+    <nav className="fixed top-0 left-0 h-[15vh] pointer-events-none navbar w-screen z-50">
       <div className="navbar-start pointer-events-none ml-8 items-start flex flex-col z-10">
         <p className="text-md text-left">Mohammed Alrassas </p>
         <p className="text-sm text-left">Front End Developer</p>
@@ -73,7 +72,7 @@ const Navbar = () => {
       <div className="navbar-end top-5 pointer-events-auto ml-5 justify-center text-left items-start z-10">
         <button className="btn btn-circle">HIII</button>
       </div>
-    </div>
+    </nav>
   );
 };
 

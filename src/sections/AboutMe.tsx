@@ -40,7 +40,10 @@ const HorizontalScroll = () => {
             </div>
           </div>
 
-          <Box text="I'm gonna be honest..." />
+          <Box
+            text="Frontend developer obsessed with motion, interaction, and 
+the space where engineering meets animation."
+          />
           <Box text="I'm still a joniur dev..." />
           <Box text="I started 4 years ago and felt in love..." />
           <Box text="I didn't took it seruosly..." />
