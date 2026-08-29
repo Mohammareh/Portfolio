@@ -5,7 +5,7 @@ const Work = () => {
   return (
     <section
       id="about-me"
-      className="px-[19%] relative flex flex-col items-center space-y-70 mt-40 w-full"
+      className="px-[19%] relative flex flex-col items-center space-y-70 mt-40 w-full pointer-events-none"
     >
       <motion.div
         className="rounded-tl-[36px] w-full rounded-tr-[36px] justify-center items-center h-100 sm:h-80 md:h-60 border-t-4 border-x-4 opacity-50 pointer-events-none z-20 border-fade-down"

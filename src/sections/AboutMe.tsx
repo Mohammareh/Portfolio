@@ -24,7 +24,7 @@ const HorizontalScroll = () => {
   );
 
   return (
-    <section ref={targetRef} className="relative h-[400vh]">
+    <section ref={targetRef} className="relative h-[400vh] pointer-events-none">
       <div className="sticky top-0 border mt-10 flex h-screen items-center overflow-hidden w-screen">
         <motion.div
           style={{ x, backgroundColor }}

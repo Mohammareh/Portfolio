@@ -1,4 +1,9 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 
 const gradients = {
@@ -22,32 +27,28 @@ const WorkCard = ({
   const gradientClass =
     gradients[gradient as keyof typeof gradients] || gradients["orange-black"];
 
-  const targetRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 1], ["1", "0"]);
-
   return (
-    <motion.div
-      style={{ opacity }}
-      className="w-screen h-screen justify-center items-center opacity-50 pointer-events-none z-20"
-      initial={{ opacity: 0, x: 40, scale: 0.9 }}
-      whileInView={{ scale: 1, opacity: 1, x: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <motion.div className="pointer-events-none z-20 flex h-screen w-screen items-center justify-center overflow-hidden">
       <div
-        className={`bg-linear-to-b ${gradientClass} w-full h-screen pointer-events-none z-20`}
+        className={`flex h-screen w-full items-center justify-center bg-linear-to-b ${gradientClass} px-4 py-8 sm:px-8 lg:px-16`}
       >
-        <div className="card flex flex-col items-center justify-center">
-          <div className="card-title place-self-start ml-5 mt-3 text-4xl font-extrabold text-base-content opacity-100">
-            {title}
-          </div>
-          <div className="card-body">
-            {content}
-            <img className="rounded-3xl" src={img} alt="" />
+        <div className="card flex w-full max-w-7xl items-center justify-center rounded-4xl border border-white/10 bg-black/10 shadow-2xl backdrop-blur-sm">
+          <div className="card-body flex w-full flex-col items-center justify-between gap-8 px-4 py-8 sm:flex-row sm:px-8 lg:px-12">
+            <div className="flex flex-col items-center space-y-5 text-center sm:w-[30%] sm:items-start sm:text-left">
+              <div className="card-title ml-0 mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                {title}
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-white/80 sm:text-base">
+                {content}
+              </p>
+            </div>
+            <div className="flex w-full justify-center sm:w-[60%]">
+              <img
+                className="h-[40vh] w-full max-w-[60vw] rounded-[1.75rem] border border-white/10 object-cover sm:h-[55vh]"
+                src={img}
+                alt={`${title} screenshot`}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -6,9 +6,10 @@ import Contact from "./sections/Contact";
 import { Footer } from "./sections/Footer";
 import InteractiveBackground from "./components/InteractiveBackground";
 import AboutMe from "./sections/AboutMe";
-import OhReallyHuh from "./sections/OhReallyHuh";
 import MyProjects from "./components/MyProjects";
 import LocomotiveScroll from "locomotive-scroll";
+import YouWantSmthn from "./sections/YouWantSmthn";
+import CheckMyProjects from "./sections/CheckMyProjects";
 
 const App = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-clip">
       <Navbar />
       <InteractiveBackground />
 
@@ -24,7 +25,8 @@ const App = () => {
         <Hero />
         <Work />
         <AboutMe />
-        <OhReallyHuh />
+        <YouWantSmthn />
+        <CheckMyProjects />
         <MyProjects />
         <Contact />
         <Footer />
