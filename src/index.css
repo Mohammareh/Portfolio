@@ -19,3 +19,24 @@
     );
   }
 }
+
+Chrome/Safari/Edge ::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-base-content);
+  border-radius: 8px;
+}
+/* Hide arrows */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-base-content) #ffffff00;
+}

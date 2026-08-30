@@ -20,14 +20,14 @@ const Hero = () => {
 
       <motion.div
         // `pointer-events-none` disables mouse and click events for this element, so it won't block interaction with elements behind it.
-        className="text-center flex flex-col justify-center items-center z-20 h-[70vh] sm:text-2xl text-white font-bold drop-shadow-lg pointer-events-none space-y-10 select-none"
+        className="text-center flex flex-col justify-center items-center z-20 h-[70vh] sm:text-2xl text-white font-bold drop-shadow-lg px-10 pointer-events-none space-y-10 select-none"
         style={{ scale, opacity }}
       >
-        <h1 className="z-20 block text-3xl sm:text-6xl md:text-8xl font-extrabold bg-linear-to-r from-base-content to-primary bg-clip-text text-transparent mt-5">
-          I craft products, interactions & stories.
+        <h1 className="z-20 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] font-extrabold bg-linear-to-r from-base-content to-primary bg-clip-text text-transparent mt-5">
+          Building smooth, interactive web experiences.
         </h1>
         <span className="block text-xl text-base-content md:text-2xl font-medium">
-          Front End Developer &amp; UI/UX Designer
+          Frontend Developer • React • TypeScript • Framer Motion
         </span>
 
         <motion.div

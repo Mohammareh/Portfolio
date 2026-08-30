@@ -1,4 +1,4 @@
-export function Footer() {
+const Footer = () => {
   return (
     <footer className="border-t py-10 z-20">
       <div className="mx-auto flex w-[97vw] flex-col gap-4 px-5 text-sm md:flex-row md:items-center md:justify-between">
@@ -23,4 +23,6 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

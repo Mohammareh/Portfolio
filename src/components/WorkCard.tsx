@@ -1,34 +1,32 @@
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const gradients = {
-  "orange-black": "from-orange-700 to-black",
-  "purple-black": "from-purple-700 to-black",
-  "green-blue": "from-green-700 to-blue-700",
-  "yellow-orange": "from-yellow-700 to-orange-700",
+  "orange-base": "from-orange-800/90 to-base-100/90",
+  "purple-base": "from-purple-900/90 to-base-100/90",
+  "green-blue": "from-green-950/90 to-blue-900/90",
+  "base-secondary-basecontent":
+    "from-base-100/90 via-secondary/90 to-base-content/90",
 };
 
 const WorkCard = ({
   content,
   title,
   img,
+  link,
   gradient,
 }: {
   content: string;
   title: string;
   img: string;
+  link: string;
   gradient: string | keyof typeof gradients;
 }) => {
   const gradientClass =
-    gradients[gradient as keyof typeof gradients] || gradients["orange-black"];
+    gradients[gradient as keyof typeof gradients] || gradients["orange-base"];
 
   return (
-    <motion.div className="pointer-events-none z-20 flex h-screen w-screen items-center justify-center overflow-hidden">
+    <motion.div className="z-20 flex h-screen w-screen items-center justify-center overflow-hidden">
       <div
         className={`flex h-screen w-full items-center justify-center bg-linear-to-b ${gradientClass} px-4 py-8 sm:px-8 lg:px-16`}
       >
@@ -42,12 +40,17 @@ const WorkCard = ({
                 {content}
               </p>
             </div>
-            <div className="flex w-full justify-center sm:w-[60%]">
+            <div className="flex flex-col space-y-2 w-full justify-center sm:w-[60%]">
               <img
                 className="h-[40vh] w-full max-w-[60vw] rounded-[1.75rem] border border-white/10 object-cover sm:h-[55vh]"
                 src={img}
                 alt={`${title} screenshot`}
               />
+              <div className="aura aura-gold">
+                <a href={link} target="_blank" className="btn w-full">
+                  Live Demo <ArrowUpRight />
+                </a>
+              </div>
             </div>
           </div>
         </div>
