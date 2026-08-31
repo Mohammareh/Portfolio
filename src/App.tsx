@@ -13,10 +13,16 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
+    const scrollElement = document.querySelector("[data-scroll-container]") as
+      | HTMLElement
+      | null;
+
+    if (!scrollElement) return;
+
     const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
+      el: scrollElement,
       smooth: true,
-    });
+    } as any);
 
     return () => {
       scroll.destroy();

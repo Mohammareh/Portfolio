@@ -5,7 +5,6 @@ import jobifyImg from "../assets/Jobify.png";
 import portfolioImg from "../assets/portfolio.png";
 import threejsImg from "../assets/threejs.png";
 import todoImg from "../assets/todo.png";
-import bgImg from "../assets/background-dark.jpg";
 
 const MyProjects = () => {
   const targetRef = useRef<HTMLDivElement>(null);
