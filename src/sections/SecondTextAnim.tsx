@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
@@ -15,7 +15,7 @@ const SecondTextAnim = () => {
   console.log(letters);
 
   return (
-    <section ref={firstTargetRef} className="relative h-[300vh]">
+    <section ref={firstTargetRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center">
         <motion.div className="flex text-center">
           <p
@@ -38,8 +38,18 @@ const SecondTextAnim = () => {
   );
 };
 
-const Character = ({ char, scrollYProgress, i, letters }) => {
-  const opacity: any = useTransform(
+const Character = ({
+  char,
+  scrollYProgress,
+  i,
+  letters,
+}: {
+  char: string;
+  scrollYProgress: MotionValue<number>;
+  i: number;
+  letters: string[];
+}) => {
+  const opacity: MotionValue<string> = useTransform(
     scrollYProgress,
     [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
     ["0", "1", "1"],
@@ -49,13 +59,6 @@ const Character = ({ char, scrollYProgress, i, letters }) => {
     scrollYProgress,
     [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
     [i % 2 === 0 ? "50px" : "-50px", "0px", "0px"],
-  );
-
-  // For x: use pixel values with units
-  const x = useTransform(
-    scrollYProgress,
-    [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
-    ["100px", "0px", "0px"], // Start 100px right, end at original position
   );
 
   return (

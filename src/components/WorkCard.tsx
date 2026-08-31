@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const gradients = {
-  "orange-base": "from-orange-800/90 to-base-100/90",
-  "purple-base": "from-purple-900/90 to-base-100/90",
-  "green-blue": "from-green-950/90 to-blue-900/90",
-  "base-secondary-basecontent":
-    "from-base-100/90 via-secondary/90 to-base-content/90",
-};
-
 const WorkCard = ({
   content,
   title,
@@ -20,15 +12,12 @@ const WorkCard = ({
   title: string;
   img: string;
   link: string;
-  gradient: string | keyof typeof gradients;
+  gradient: string;
 }) => {
-  const gradientClass =
-    gradients[gradient as keyof typeof gradients] || gradients["orange-base"];
-
   return (
     <motion.div className="z-20 flex h-screen w-screen items-center justify-center overflow-hidden">
       <div
-        className={`flex h-screen w-full items-center justify-center bg-linear-to-b ${gradientClass} px-4 py-8 sm:px-8 lg:px-16`}
+        className={`flex h-screen w-full items-center justify-center bg-linear-to-b ${gradient} px-4 py-8 sm:px-8 lg:px-16`}
       >
         <div className="card flex w-full max-w-7xl items-center justify-center rounded-4xl border border-white/10 bg-black/10 shadow-2xl backdrop-blur-sm">
           <div className="card-body flex w-full flex-col items-center justify-between gap-8 px-4 py-8 sm:flex-row sm:px-8 lg:px-12">

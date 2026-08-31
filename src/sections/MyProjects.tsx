@@ -1,6 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import WorkCard from "../components/WorkCard"; // or your card component
+import jobifyImg from "../assets/Jobify.png";
+import portfolioImg from "../assets/portfolio.png";
+import threejsImg from "../assets/threejs.png";
+import todoImg from "../assets/todo.png";
+import bgImg from "../assets/background-dark.jpg";
 
 const MyProjects = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -18,32 +23,32 @@ const MyProjects = () => {
       title: "Jobify",
       content:
         "A responsive Job Board web application that aggregates and normalizes job listings fetched from multiple public APIs. Implemented advanced filtering functionality allowing users to filter by salary period, pay range, currency, and location restrictions",
-      img: "./src/assets/Jobify.png",
-      gradient: "orange-base",
+      img: jobifyImg,
+      gradient: "from-orange-800/90 to-base-100/90",
       link: "https://job-filtering-dash-board.vercel.app/",
     },
     {
       title: "Portfolio",
       content:
         "This portfolio website you're currently viewing, built with React, TypeScript, and Framer Motion. It showcases my projects, skills, and experience in a visually appealing and interactive manner.",
-      img: "./src/assets/portfolio.png",
-      gradient: "base-secondary-basecontent",
+      img: portfolioImg,
+      gradient: "from-base-100/90 via-secondary/90 to-base-content/90",
       link: "#",
     },
     {
       title: "Three.js 3D Website",
       content:
-        "A 3D interactive web experience built with Three.js, allowing users to explore 3D models in a web environment. (Note: The images in the published version dosn't match the original design due to hosting limitations, but the 3D functionality is fully implemented.)",
-      img: "./src/assets/threejs.png",
-      gradient: "green-blue",
+        "A 3D interactive web experience built with Three.js, allowing users to explore 3D models in a web environment. (Note: The images in the published version doesn't match the original design due to hosting limitations, but the 3D functionality is fully implemented.)",
+      img: threejsImg,
+      gradient: "from-green-950/90 to-blue-900/90",
       link: "https://threejs-3d-taupe.vercel.app/",
     },
     {
       title: "ToDo App",
       content:
         "A simple ToDo application with real-time updates and backend integration, allowing users to create, read, update, and delete tasks. Built with HTLM, TailwindCSS, JavaScript and Django, it features a clean and intuitive user interface for efficient task management.",
-      img: "./src/assets/todo.png",
-      gradient: "purple-base",
+      img: todoImg,
+      gradient: "from-purple-900/90 to-base-100/90",
       link: "https://todolist-jx8l.onrender.com/",
     },
   ];

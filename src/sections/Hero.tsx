@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import bgImage from "../assets/background-dark.jpg";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -11,7 +12,7 @@ const Hero = () => {
     <div className="h-screen">
       <motion.img
         className="absolute pointer-events-none top-0 left-0 object-cover w-screen h-screen select-none"
-        src={"./src/assets/background-dark.jpg"}
+        src={bgImage}
         alt="Background Image"
         style={{ scale, borderRadius, opacity }}
       />

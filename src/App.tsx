@@ -13,7 +13,14 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
-    const scroll = new LocomotiveScroll();
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+    });
+
+    return () => {
+      scroll.destroy();
+    };
   }, []);
 
   return (
@@ -23,11 +30,11 @@ const App = () => {
 
       <main className="flex flex-col z-10 items-center">
         <Hero />
-        <FirstTextAnim />
         <SecondTextAnim />
         <MyProjects />
         <Introduction />
         <AboutMe />
+        <FirstTextAnim />
         <Contact />
         <Footer />
       </main>

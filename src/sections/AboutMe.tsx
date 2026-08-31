@@ -56,7 +56,7 @@ const MyProjects = () => {
           content={
             "I'm Mohammed, a junior frontend developer from Yemen who fell in love with coding after discovering Framer Motion animations."
           }
-          gradient={"blue-orange-green"}
+          gradient={"from-blue-800/80 via-orange-800/80 to-green-900/80"}
         />
 
         <AboutMeCard
@@ -65,7 +65,7 @@ const MyProjects = () => {
           content={
             "What started as exploring how do they make websites move like that? turned into a deep dive into React TypeScript and Framer Motion. Now I build smooth, pixel-perfect web experiences that people actually enjoy using."
           }
-          gradient={"blue-green"}
+          gradient={"from-blue-950/80 to-green-950/80"}
         />
 
         <AboutMeCard
@@ -74,16 +74,16 @@ const MyProjects = () => {
           content={
             "I believe great frontend work isn't just about functionality—it's about making every interaction feel intentional and delightful. Currently expanding into full-stack development to understand the bigger picture."
           }
-          gradient={"black-blue"}
+          gradient={"from-black/80 to-blue-950/80"}
         />
 
         <AboutMeCard
           style={{ x: x4 }}
-          title={"My Journey (Summarized)"}
+          title={"My Skills"}
           content={
-            "I started with the basics HTML, CSS and JavaScript, then discovered the backend world with Flask before switching to Django, then ExpressJS, NodeJS and MongoDB with the MERN stack, then I went back to the front end to learn about TawilwindCSS and Framer-Motion."
+            "React • TailwindCSS • Framer Motion • Back-End Python Development (Django and Flask) • MERN Stack Development • Bootstrap • Git Version Control • Web Socket with SocketIO • 70 WPM touch typing  with the keyboard • AI Assistant Coding (Not Vibe Coding) • Also speaking Arabic natively and fluent in English with a little of Spanish and Hindi/Urdu"
           }
-          gradient={"orange-black"}
+          gradient={"from-orange-800/80 to-black/80"}
         />
       </div>
     </section>

@@ -32,10 +32,11 @@ const Introduction = () => {
           {/* Content */}
           <div className="card flex flex-col items-center justify-center p-8">
             <h2 className="card-title mt-3 text-xl sm:text-3xl md:text-4xl font-extrabold text-base-content opacity-100">
-              Who am I?
+              About me and my skills
             </h2>
             <div className="card-body text-lg font-semibold">
-              Keep scrolling to see who I am and get the full picture
+              Keep scrolling to see who I am and get the full picture about what
+              can I do
             </div>
           </div>
         </div>

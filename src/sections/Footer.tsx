@@ -13,7 +13,10 @@ const Footer = () => {
           >
             GitHub
           </a>
-          <a href="Gida Gidy Gida Gida Oh" className="hover:text-primary">
+          <a
+            href="https://www.linkedin.com/in/mohammed-alrassas-1b707341b"
+            className="hover:text-primary"
+          >
             LinkedIn
           </a>
           <a href={`mailto:Mohammed`} className="hover:text-primary">
