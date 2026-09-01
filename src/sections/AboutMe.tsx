@@ -81,7 +81,7 @@ const MyProjects = () => {
           style={{ x: x4 }}
           title={"My Skills"}
           content={
-            "React • TailwindCSS • Framer Motion • Back-End Python Development (Django and Flask) • MERN Stack Development • Bootstrap • Git Version Control • Web Socket with SocketIO • 70 WPM touch typing  with the keyboard • AI Assistant Coding (Not Vibe Coding) • Also speaking Arabic natively and fluent in English with a little of Spanish and Hindi/Urdu"
+            "React • TypeScript • TailwindCSS • Framer Motion • Back-End Python Development (Django and Flask) • MERN Stack Development • Bootstrap • Git Version Control • Web Socket with SocketIO • 70 WPM touch typing  with the keyboard • AI Assistant Coding (Not Vibe Coding) • Also speaking Arabic natively and fluent in English with a little of Spanish and Hindi/Urdu"
           }
           gradient={"from-orange-800/80 to-black/80"}
         />
