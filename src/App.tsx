@@ -13,7 +13,7 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
-    const scroll = new LocomotiveScroll();
+    new LocomotiveScroll();
   }, []);
 
   return (
