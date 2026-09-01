@@ -16,6 +16,8 @@ const App = () => {
     new LocomotiveScroll();
   }, []);
 
+  console.log("Testing Branch");
+
   return (
     <div className="min-h-screen relative overflow-x-clip data-scroll-container">
       <Navbar />
