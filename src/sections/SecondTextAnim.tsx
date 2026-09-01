@@ -12,7 +12,6 @@ const SecondTextAnim = () => {
   const text = "Here's what I've built";
 
   const letters = text.split(" ");
-  console.log(letters);
 
   return (
     <section ref={firstTargetRef} className="relative h-[200vh]">

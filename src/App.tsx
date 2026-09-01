@@ -13,24 +13,11 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
-    const scrollElement = document.querySelector("[data-scroll-container]") as
-      | HTMLElement
-      | null;
-
-    if (!scrollElement) return;
-
-    const scroll = new LocomotiveScroll({
-      el: scrollElement,
-      smooth: true,
-    } as any);
-
-    return () => {
-      scroll.destroy();
-    };
+    const scroll = new LocomotiveScroll();
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-x-clip">
+    <div className="min-h-screen relative overflow-x-clip data-scroll-container">
       <Navbar />
       <InteractiveBackground />
 
