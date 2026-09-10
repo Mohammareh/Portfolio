@@ -13,42 +13,12 @@ const MyProjects = () => {
   const y3 = useTransform(scrollYProgress, [0.45, 0.6], ["-100%", "0%"]);
   const x4 = useTransform(scrollYProgress, [0.75, 0.9], ["-400%", "-300%"]);
 
-  const topWidth = useTransform(scrollYProgress, [0, 0.25], ["0%", "100%"]);
-  const rightHeight = useTransform(
-    scrollYProgress,
-    [0.25, 0.5],
-    ["0%", "100%"],
-  );
-  const bottomWidth = useTransform(
-    scrollYProgress,
-    [0.5, 0.75],
-    ["0%", "100%"],
-  );
-  const leftHeight = useTransform(scrollYProgress, [0.75, 1], ["0%", "100%"]);
-
   return (
     <section
       ref={targetRef}
       className="relative h-[300vh] bg-[#111827] text-white"
     >
       <div className="sticky top-0 flex h-screen w-screen items-center overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 h-0.5 bg-orange-500"
-          style={{ width: topWidth }}
-        />
-        <motion.div
-          className="absolute top-0 right-0 w-1.5 bg-orange-500"
-          style={{ height: rightHeight }}
-        />
-        <motion.div
-          className="absolute bottom-0 right-0 h-0.5 bg-orange-500"
-          style={{ width: bottomWidth }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-1.5 bg-orange-500"
-          style={{ height: leftHeight }}
-        />
-
         <motion.div className="bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.25),transparent_40%),radial-gradient(circle_at_bottom,rgba(34,197,94,0.18),transparent_32%)]" />
 
         <AboutMeCard

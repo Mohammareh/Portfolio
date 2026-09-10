@@ -35,11 +35,9 @@ const WorkCard = ({
                 src={img}
                 alt={`${title} screenshot`}
               />
-              <div className="aura aura-gold">
-                <a href={link} target="_blank" className="btn w-full">
-                  Live Demo <ArrowUpRight />
-                </a>
-              </div>
+              <a href={link} target="_blank" className="btn">
+                Live Demo <ArrowUpRight />
+              </a>
             </div>
           </div>
         </div>
