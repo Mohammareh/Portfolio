@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <div className="h-screen">
       <motion.img
-        className="absolute pointer-events-none top-0 left-0 object-cover w-screen h-screen select-none"
+        className="absolute top-0 left-0 object-cover w-screen h-screen select-none"
         src={bgImage}
         alt="Background Image"
         style={{ scale, borderRadius, opacity }}
@@ -20,8 +20,7 @@ const Hero = () => {
       <div className="h-[15vh]" />
 
       <motion.div
-        // `pointer-events-none` disables mouse and click events for this element, so it won't block interaction with elements behind it.
-        className="text-center flex flex-col justify-center items-center z-20 h-[70vh] sm:text-2xl text-white font-bold drop-shadow-lg px-10 pointer-events-none space-y-10 select-none"
+        className="text-center flex flex-col justify-center items-center z-20 h-[70vh] sm:text-2xl text-white font-bold drop-shadow-lg px-10 space-y-10 select-none"
         style={{ scale, opacity }}
       >
         <h1 className="z-20 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] font-extrabold bg-linear-to-r from-base-content to-primary bg-clip-text text-transparent mt-5">

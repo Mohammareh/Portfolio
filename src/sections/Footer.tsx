@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="border-t py-10 z-20 pointer-events-none">
+    <footer className="border-t py-10 z-20">
       <div className="mx-auto flex w-[97vw] flex-col gap-4 px-5 text-sm md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col">
           <p>© 2026 Mohammed. All Rights Reserved.</p>
@@ -13,21 +13,21 @@ const Footer = () => {
           <a
             target="_blank"
             href="https://github.com/Mohammareh"
-            className="hover:text-primary pointer-events-auto"
+            className="hover:text-primary"
           >
             GitHub
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/mohammed-alrassas-1b707341b"
-            className="hover:text-primary pointer-events-auto"
+            className="hover:text-primary"
           >
             LinkedIn
           </a>
           <a
             target="_blank"
             href="mailto:xdmohammad83@gmail.com"
-            className="hover:text-primary pointer-events-auto"
+            className="hover:text-primary"
           >
             xdmohammad83@gmail.com
           </a>

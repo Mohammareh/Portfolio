@@ -6,13 +6,13 @@ const Navbar = () => {
   const [tab, setTab] = useState("");
 
   return (
-    <nav className="fixed top-0 left-0 h-[15vh] pointer-events-none navbar w-screen z-50">
-      <div className="navbar-start pointer-events-none ml-8 items-start flex flex-col z-10">
+    <nav className="fixed top-0 left-0 h-[15vh] navbar w-screen z-50">
+      <div className="navbar-start ml-8 items-start flex flex-col z-10">
         <p className="text-md text-left">Mohammed Alrassas </p>
         <p className="text-sm text-left">Front End Developer</p>
       </div>
 
-      <div className="pointer-events-auto navbar-center">
+      <div className="navbar-center">
         <div className="max-w-sm mx-auto bg-white/20 backdrop-blur-lg border border-white/20 w-45 h-12 space-x-3 rounded-4xl justify-center items-center flex z-10">
           <motion.div
             className="absolute glass -z-10 w-25 h-12 rounded-4xl"
@@ -47,7 +47,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className="navbar-end top-5 pointer-events-auto ml-5 justify-around text-left items-start z-10">
+      <div className="navbar-end top-5 ml-5 justify-around text-left items-start z-10">
         {/* For TSX uncomment the commented types below */}
         <button
           className="btn btn-circle btn-ghost md:hidden"

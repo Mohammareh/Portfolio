@@ -5,10 +5,10 @@ const Introduction = () => {
   return (
     <section
       id="about-me"
-      className="px-[19%] relative h-screen flex items-center mt-40 w-full pointer-events-none"
+      className="px-[19%] relative h-screen flex items-center mt-40 w-full"
     >
       <motion.div
-        className="relative rounded-tl-[36px] w-full rounded-tr-[36px] justify-center items-center h-100 sm:h-80 md:h-60 border-t-4 border-x-4 opacity-50 pointer-events-none z-20 border-fade-down"
+        className="relative rounded-tl-[36px] w-full rounded-tr-[36px] justify-center items-center h-100 sm:h-80 md:h-60 border-t-4 border-x-4 opacity-50 z-20 border-fade-down"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{
           scale: 1,
@@ -17,7 +17,7 @@ const Introduction = () => {
         }}
         transition={{ duration: 0.5 }}
       >
-        <div className="rounded-tl-4xl rounded-tr-4xl bg-linear-to-b from-primary/50 to-base-100 w-full h-100 pointer-events-none z-20">
+        <div className="rounded-tl-4xl rounded-tr-4xl bg-linear-to-b from-primary/50 to-base-100 w-full h-100 z-20">
           {/* Top bar */}
           <div className="w-full h-12 rounded-tl-4xl rounded-tr-4xl bg-white/20 backdrop-blur-lg border border-white/20 flex items-center px-4 justify-between">
             <div className="space-x-4 flex">

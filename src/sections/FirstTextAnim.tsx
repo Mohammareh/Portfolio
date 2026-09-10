@@ -14,10 +14,7 @@ const FirstTextAnim = () => {
   const letters = text.split("");
 
   return (
-    <section
-      ref={firstTargetRef}
-      className="relative h-[200vh] pointer-events-none"
-    >
+    <section ref={firstTargetRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center px-4 ">
         <motion.div className="flex text-center">
           <p className="whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center font-bold">
