@@ -11,18 +11,26 @@ const Footer = () => {
         </div>
         <div className="flex space-x-6">
           <a
+            target="_blank"
             href="https://github.com/Mohammareh"
             className="hover:text-primary pointer-events-auto"
           >
             GitHub
           </a>
           <a
+            target="_blank"
             href="https://www.linkedin.com/in/mohammed-alrassas-1b707341b"
             className="hover:text-primary pointer-events-auto"
           >
             LinkedIn
           </a>
-          <p className="pointer-events-auto">Email: xdmohammad83@gmail.com</p>
+          <a
+            target="_blank"
+            href="mailto:xdmohammad83@gmail.com"
+            className="hover:text-primary pointer-events-auto"
+          >
+            xdmohammad83@gmail.com
+          </a>
         </div>
       </div>
     </footer>
