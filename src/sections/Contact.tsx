@@ -39,9 +39,9 @@ const Contact = () => {
 
     if (nextIndex === 0) {
       setX("160%");
-      setX2("150%");
-      setX3("120%");
-      setX4("90%");
+      setX2("160%");
+      setX3("125%");
+      setX4("100%");
       setScale(1);
       setScale2(0.6);
       setScale3(0.6);
@@ -51,10 +51,10 @@ const Contact = () => {
       setOpacity3(0.4);
       setOpacity4(0.4);
     } else if (nextIndex === 1) {
-      setX("44%");
+      setX("54%");
       setX2("53%");
-      setX3("60%");
-      setX4("30%");
+      setX3("50%");
+      setX4("20%");
       setScale(0.6);
       setScale2(1);
       setScale3(0.6);
@@ -77,8 +77,8 @@ const Contact = () => {
       setOpacity3(1);
       setOpacity4(0.4);
     } else if (nextIndex === 3) {
-      setX("-90%");
-      setX2("-120%");
+      setX("-100%");
+      setX2("-125%");
       setX3("-150%");
       setX4("-160%");
       setScale(0.6);
