@@ -1,23 +1,26 @@
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
-const FirstTextAnim = () => {
+const FirstTextAnimation = () => {
   const firstTargetRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: firstTargetRef,
   });
 
-  const text = "Let's build something together";
+  const text = "Here's what I've built";
 
-  const letters = text.split("");
+  const letters = text.split(" ");
 
   return (
     <section ref={firstTargetRef} className="relative h-[200vh]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center px-4 ">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center">
         <motion.div className="flex text-center">
-          <p className="whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center font-bold">
+          <p
+            className="text-xl sm:text-6xl md:text-[5rem] lg:text-[6rem] xl:text-[7rem] text-center font-bold flex flex-wrap justify-center space-x-4 space-y-8"
+            style={{}}
+          >
             {letters.map((char, i) => (
               <Character
                 key={i}
@@ -41,11 +44,11 @@ const Character = ({
   letters,
 }: {
   char: string;
+  scrollYProgress: MotionValue<number>;
   i: number;
-  scrollYProgress: any;
   letters: string[];
 }) => {
-  const opacity: any = useTransform(
+  const opacity: MotionValue<string> = useTransform(
     scrollYProgress,
     [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
     ["0", "1", "1"],
@@ -54,7 +57,7 @@ const Character = ({
   const y = useTransform(
     scrollYProgress,
     [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
-    ["50px", "0px", "0px"],
+    [i % 2 === 0 ? "50px" : "-50px", "0px", "0px"],
   );
 
   return (
@@ -64,4 +67,4 @@ const Character = ({
   );
 };
 
-export default FirstTextAnim;
+export default FirstTextAnimation;

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 
-const Introduction = () => {
+const Window = () => {
   return (
     <section
       id="about-me"
@@ -45,4 +45,4 @@ const Introduction = () => {
   );
 };
 
-export default Introduction;
+export default Window;

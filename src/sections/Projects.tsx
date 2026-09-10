@@ -6,7 +6,7 @@ import portfolioImg from "../assets/portfolio.png";
 import threejsImg from "../assets/threejs.png";
 import todoImg from "../assets/todo.png";
 
-const MyProjects = () => {
+const Projects = () => {
   const targetRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -100,4 +100,4 @@ const MyProjects = () => {
   );
 };
 
-export default MyProjects;
+export default Projects;

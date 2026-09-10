@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import FirstTextAnim from "./sections/FirstTextAnim";
-import SecondTextAnim from "./sections/SecondTextAnim";
-import MyProjects from "./sections/MyProjects";
-import Introduction from "./sections/Introduction";
+import Projects from "./sections/Projects";
+import Window from "./sections/Window";
 import AboutMe from "./sections/AboutMe";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import FirstTextAnimation from "./sections/FirstTextAnimation";
+import SecondTextAnimation from "./sections/SecondTextAnimation";
 
 const App = () => {
   useEffect(() => {
@@ -21,11 +21,11 @@ const App = () => {
 
       <main className="flex flex-col z-10 items-center">
         <Hero />
-        <SecondTextAnim />
-        <MyProjects />
-        <Introduction />
+        <FirstTextAnimation />
+        <Projects />
+        <Window />
         <AboutMe />
-        <FirstTextAnim />
+        <SecondTextAnimation />
         <Contact />
         <Footer />
       </main>

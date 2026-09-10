@@ -2,25 +2,22 @@ import { motion, MotionValue } from "framer-motion";
 import { useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
-const SecondTextAnim = () => {
+const SecondTextAnimation = () => {
   const firstTargetRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: firstTargetRef,
   });
 
-  const text = "Here's what I've built";
+  const text = "Let's build something together";
 
-  const letters = text.split(" ");
+  const letters = text.split("");
 
   return (
     <section ref={firstTargetRef} className="relative h-[200vh]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden w-screen justify-center px-4 ">
         <motion.div className="flex text-center">
-          <p
-            className="text-xl sm:text-6xl md:text-[5rem] lg:text-[6rem] xl:text-[7rem] text-center font-bold flex flex-wrap justify-center space-x-4 space-y-8"
-            style={{}}
-          >
+          <p className="whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center font-bold">
             {letters.map((char, i) => (
               <Character
                 key={i}
@@ -44,8 +41,8 @@ const Character = ({
   letters,
 }: {
   char: string;
-  scrollYProgress: MotionValue<number>;
   i: number;
+  scrollYProgress: MotionValue<number>;
   letters: string[];
 }) => {
   const opacity: MotionValue<string> = useTransform(
@@ -57,7 +54,7 @@ const Character = ({
   const y = useTransform(
     scrollYProgress,
     [Math.abs(1 - (i + 1)) / letters.length, (i + 1) / letters.length, 1],
-    [i % 2 === 0 ? "50px" : "-50px", "0px", "0px"],
+    ["50px", "0px", "0px"],
   );
 
   return (
@@ -67,4 +64,4 @@ const Character = ({
   );
 };
 
-export default SecondTextAnim;
+export default SecondTextAnimation;
