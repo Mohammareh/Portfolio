@@ -8,14 +8,17 @@ const Contact = () => {
   const [x, setX] = useState("0%");
   const [x2, setX2] = useState("0%");
   const [x3, setX3] = useState("0%");
+  const [x4, setX4] = useState("0%");
 
   const [scale, setScale] = useState(0.6);
   const [scale2, setScale2] = useState(1);
   const [scale3, setScale3] = useState(0.6);
+  const [scale4, setScale4] = useState(0.6);
 
   const [opacity, setOpacity] = useState(0.4);
   const [opacity2, setOpacity2] = useState(1);
   const [opacity3, setOpacity3] = useState(0.4);
+  const [opacity4, setOpacity4] = useState(0.4);
 
   const handleSwitch = (target: number | string): void => {
     let nextIndex = cardIndex;
@@ -23,9 +26,9 @@ const Contact = () => {
     if (typeof target === "string") {
       // Arrow button logic
       if (target === "left") {
-        nextIndex = cardIndex === 0 ? 2 : cardIndex - 1;
+        nextIndex = cardIndex === 0 ? 3 : cardIndex - 1;
       } else if (target === "right") {
-        nextIndex = cardIndex === 2 ? 0 : cardIndex + 1;
+        nextIndex = cardIndex === 3 ? 0 : cardIndex + 1;
       }
     } else {
       // Card click logic
@@ -35,35 +38,57 @@ const Contact = () => {
     setCardIndex(nextIndex);
 
     if (nextIndex === 0) {
-      setX("104%");
-      setX2("100%");
-      setX3("100%");
+      setX("160%");
+      setX2("150%");
+      setX3("120%");
+      setX4("90%");
       setScale(1);
       setScale2(0.6);
       setScale3(0.6);
+      setScale4(0.6);
       setOpacity(1);
       setOpacity2(0.4);
       setOpacity3(0.4);
+      setOpacity4(0.4);
     } else if (nextIndex === 1) {
-      setX("0%");
-      setX2("0%");
-      setX3("0%");
+      setX("44%");
+      setX2("53%");
+      setX3("60%");
+      setX4("30%");
       setScale(0.6);
       setScale2(1);
       setScale3(0.6);
+      setScale4(0.6);
       setOpacity(0.4);
       setOpacity2(1);
       setOpacity3(0.4);
+      setOpacity4(0.4);
     } else if (nextIndex === 2) {
-      setX("-100%");
-      setX2("-100%");
-      setX3("-104%");
+      setX("-20%");
+      setX2("-50%");
+      setX3("-50%");
+      setX4("-54%");
       setScale(0.6);
       setScale2(0.6);
       setScale3(1);
+      setScale4(0.6);
       setOpacity(0.4);
       setOpacity2(0.4);
       setOpacity3(1);
+      setOpacity4(0.4);
+    } else if (nextIndex === 3) {
+      setX("-90%");
+      setX2("-120%");
+      setX3("-150%");
+      setX4("-160%");
+      setScale(0.6);
+      setScale2(0.6);
+      setScale3(0.6);
+      setScale4(1);
+      setOpacity(0.4);
+      setOpacity2(0.4);
+      setOpacity3(0.4);
+      setOpacity4(1);
     }
   };
 
@@ -104,6 +129,15 @@ const Contact = () => {
             handleSwitch={handleSwitch}
             selected={cardIndex === 2 ? true : false}
           />
+          <ThreeDimensionCard
+            social={"email"}
+            cardIndex={3}
+            x={x4}
+            scale={scale4}
+            opacity={opacity4}
+            handleSwitch={handleSwitch}
+            selected={cardIndex === 3 ? true : false}
+          />
         </div>
         <button
           className="btn btn-circle z-10 w-[10%]"
@@ -112,9 +146,6 @@ const Contact = () => {
           <ArrowRight />
         </button>
       </div>
-      <p className="z-10 text-2xl text-center mb-10">
-        Or write me an email at xdmohammad83@gmail.com
-      </p>
     </section>
   );
 };

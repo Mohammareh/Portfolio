@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { GitBranch, Link2, Phone } from "lucide-react";
+import { GitBranch, Link2, Mail, Phone } from "lucide-react";
 
 const ThreeDimensionCard = ({
   x,
@@ -44,17 +44,28 @@ const ThreeDimensionCard = ({
             bottomInfo: "I meant WhatsApp chatting",
             link: "https://wa.me/966500812403",
           }
-        : {
-            bg: "bg-blue-950",
-            icon: <Link2 size={32} />,
-            title: "LinkedIn",
-            description:
-              "My LinkedIn account. Nothing very special but it exists ;)",
-            website: "LinkedIn",
-            topInfo: "Mainly for job hunting",
-            bottomInfo: "My feed is all google",
-            link: "https://www.linkedin.com/in/mohammed-alrassas-1b707341b",
-          };
+        : social === "email"
+          ? {
+              bg: "bg-red-950",
+              icon: <Mail size={32} />,
+              title: "Email",
+              description: "Send me an email at xdmohammad83@gmail.com",
+              website: "Gmail",
+              topInfo: "I only sign in with it",
+              bottomInfo: "You can write to me though",
+              link: "mailto:xdmohammad83@gmail.com",
+            }
+          : {
+              bg: "bg-blue-950",
+              icon: <Link2 size={32} />,
+              title: "LinkedIn",
+              description:
+                "My LinkedIn account. Nothing very special but it exists ;)",
+              website: "LinkedIn",
+              topInfo: "Mainly for job hunting",
+              bottomInfo: "My feed is all google",
+              link: "https://www.linkedin.com/in/mohammed-alrassas-1b707341b",
+            };
 
   return (
     <motion.a
