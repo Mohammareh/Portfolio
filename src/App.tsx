@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Navbar from "./components/Navbar";
+import InteractiveBackground from "./components/InteractiveBackground";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Window from "./sections/Window";
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div className="min-h-screen relative overflow-x-clip data-scroll-container">
       <Navbar />
+      <InteractiveBackground />
 
       <main className="flex flex-col z-10 items-center">
         <Hero />
