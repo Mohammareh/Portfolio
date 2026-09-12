@@ -47,7 +47,7 @@ export default function InteractiveBackground() {
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden"
+      className="fixed inset-0 pointer-events-none z-20 overflow-hidden"
       aria-hidden="true"
     >
       <motion.div

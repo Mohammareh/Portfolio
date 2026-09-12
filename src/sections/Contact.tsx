@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThreeDimensionCard from "../components/ThreeDimensionCard";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   const [cardIndex, setCardIndex] = useState(1);
 
-  const [x, setX] = useState("0%");
-  const [x2, setX2] = useState("0%");
-  const [x3, setX3] = useState("0%");
-  const [x4, setX4] = useState("0%");
+  const [x, setX] = useState("54%");
+  const [x2, setX2] = useState("53%");
+  const [x3, setX3] = useState("50%");
+  const [x4, setX4] = useState("20%");
 
   const [scale, setScale] = useState(0.6);
   const [scale2, setScale2] = useState(1);
