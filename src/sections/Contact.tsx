@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ThreeDimensionCard from "../components/ThreeDimensionCard";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
